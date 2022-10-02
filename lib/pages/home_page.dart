@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_find_house/models/city.dart';
 import 'package:flutter_find_house/models/space.dart';
+import 'package:flutter_find_house/models/tips.dart';
 import 'package:flutter_find_house/theme.dart';
 import 'package:flutter_find_house/widgets/city_card.dart';
 import 'package:flutter_find_house/widgets/space_card.dart';
@@ -164,8 +165,26 @@ class  HomePage extends StatelessWidget {
                   horizontal: edge
                 ),
                 child: Column(
-                  children: [
-                    TipsCard()
+                  children:[
+                    TipsCard(
+                      Tips(
+                        id: 1, 
+                        title: 'City Guidelines', 
+                        imageUrl: 'assets/tips1.png', 
+                        updatedAt: '20 Apr',
+                      )
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TipsCard(
+                      Tips(
+                        id: 2, 
+                        title: 'Jakarta Fairship', 
+                        imageUrl: 'assets/tips2.png', 
+                        updatedAt: '11 Dec',
+                      )
+                    )
                   ],
                 ),
               )
