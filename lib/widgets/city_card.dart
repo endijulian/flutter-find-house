@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_find_house/models/city.dart';
 import 'package:flutter_find_house/theme.dart';
 
 class CityCard extends StatelessWidget {
+
+  City city;
+
+  CityCard(this.city);
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +18,40 @@ class CityCard extends StatelessWidget {
         color: Color(0xffF6F7F8),
         child: Column(
           children: [
-            Image.asset(
-              'assets/city1.png',
-              width: 120,
-              height: 102,
-              fit: BoxFit.cover,
+            Stack(
+              children: [
+                Image.asset(
+                  city.imageUrl,
+                  width: 120,
+                  height: 102,
+                  fit: BoxFit.cover,
+                ),
+                city.isPopuler ? Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 50,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: purpleColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(36)
+                      ),
+                    ),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/icon_start.png',
+                        width: 22,
+                        height: 22,
+                      ),
+                    ),
+                  ),
+                ) : Container(),
+              ],
             ),
             SizedBox(
               height: 11,
             ),
-            Text('Jakarta', style: blackTextStyle.copyWith(fontSize: 16),)
+            Text(city.name, style: blackTextStyle.copyWith(fontSize: 16),)
           ],
         ),
       ),

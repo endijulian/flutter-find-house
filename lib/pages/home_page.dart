@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_find_house/models/city.dart';
 import 'package:flutter_find_house/theme.dart';
 import 'package:flutter_find_house/widgets/city_card.dart';
 
@@ -14,7 +15,10 @@ class HomePage extends StatelessWidget {
           ),
           child: ListView(
             children: [
-               Padding(
+
+              //Note: TITILE/HEADER
+
+              Padding(
                  padding: EdgeInsets.only(
                   left: edge,
                  ),
@@ -31,6 +35,9 @@ class HomePage extends StatelessWidget {
                SizedBox(
                 height: 30,
                ),
+
+              //NOTE: Pupular Cities
+
               Padding(
               padding: EdgeInsets.only(left: edge),
               child: Text('Popular Cities', style: regulerTextStyle.copyWith(fontSize: 16),),
@@ -43,12 +50,44 @@ class HomePage extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    CityCard(),
-                    CityCard(),
-                    CityCard(),
+                    SizedBox(
+                      width: 24,
+                    ),
+                    CityCard(
+                      City(id: 1, name: 'Jakarta', imageUrl: 'assets/city1.png', isPopuler: false)
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    CityCard(
+                      City(id: 2, name: 'Bandung', imageUrl: 'assets/city2.png', isPopuler: true)
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    CityCard(
+                      City(id: 1, name: 'Tangerang', imageUrl: 'assets/city3.png', isPopuler: false)
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 30,
+              ),
+            //NOTE: RECOMENDED SPACE
+              Padding(
+                padding: EdgeInsets.only(
+                left: edge,
+                ),
+                child: Text('Recomended Space', style: blackTextStyle.copyWith(fontSize: 24),),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+
             ],
           ),
         ),
