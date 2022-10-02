@@ -1,8 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_find_house/models/city.dart';
 import 'package:flutter_find_house/models/space.dart';
 import 'package:flutter_find_house/models/tips.dart';
 import 'package:flutter_find_house/theme.dart';
+import 'package:flutter_find_house/widgets/buttom_navbar_item.dart';
 import 'package:flutter_find_house/widgets/city_card.dart';
 import 'package:flutter_find_house/widgets/space_card.dart';
 import 'package:flutter_find_house/widgets/tips_card.dart';
@@ -187,11 +190,48 @@ class  HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 50,
+              ),
             ],
           ),
         ),
       ),
+      floatingActionButton: Container(
+        height: 65,
+        width: MediaQuery.of(context).size.width - (2 * edge),
+        margin: EdgeInsets.symmetric(
+          horizontal: edge,
+        ),
+        decoration: BoxDecoration(
+          color: Color(0xffF6F7F8),
+          borderRadius: BorderRadius.circular(23)
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_home.png',
+              isActive: true,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_gmail.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_card.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_love.png',
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
