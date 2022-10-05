@@ -1,4 +1,4 @@
-class Space{
+class Space {
   int id;
   String name;
   String imgaeUrl;
@@ -15,6 +15,5 @@ class Space{
     required this.city,
     required this.country,
     required this.rating,
-
   });
 }

@@ -3,7 +3,6 @@ import 'package:flutter_find_house/models/city.dart';
 import 'package:flutter_find_house/theme.dart';
 
 class CityCard extends StatelessWidget {
-
   final City city;
 
   const CityCard(this.city, {Key? key}) : super(key: key);
@@ -26,32 +25,36 @@ class CityCard extends StatelessWidget {
                   height: 102,
                   fit: BoxFit.cover,
                 ),
-                city.isPopuler ? Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: 50,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: purpleColor,
-                      borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(36)
-                      ),
-                    ),
-                    child: Center(
-                      child: Image.asset(
-                        'assets/icon_start.png',
-                        width: 22,
-                        height: 22,
-                      ),
-                    ),
-                  ),
-                ) : Container(),
+                city.isPopuler
+                    ? Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          width: 50,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            color: purpleColor,
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(36)),
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              'assets/icon_start.png',
+                              width: 22,
+                              height: 22,
+                            ),
+                          ),
+                        ),
+                      )
+                    : Container(),
               ],
             ),
             const SizedBox(
               height: 11,
             ),
-            Text(city.name, style: blackTextStyle.copyWith(fontSize: 16),)
+            Text(
+              city.name,
+              style: blackTextStyle.copyWith(fontSize: 16),
+            )
           ],
         ),
       ),

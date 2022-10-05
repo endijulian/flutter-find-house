@@ -1,4 +1,4 @@
-class Tips{
+class Tips {
   int id;
   String title;
   String imageUrl;
