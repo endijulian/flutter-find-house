@@ -1,14 +1,31 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_find_house/pages/error_page.dart';
 import 'package:flutter_find_house/theme.dart';
 import 'package:flutter_find_house/widgets/facility.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    launchUrl(String url) async {
+      if (await canLaunch(url)) {
+        launch(url);
+      } else {
+        // throw (url);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ErrorPage(),
+          ),
+        );
+      }
+    }
+
     return Scaffold(
       backgroundColor: whiteColor,
       body: SafeArea(
@@ -161,6 +178,7 @@ class DetailPage extends StatelessWidget {
                       SizedBox(
                         height: 12,
                       ),
+                      // ignore: sized_box_for_whitespace
                       Container(
                         height: 88,
                         child: ListView(
@@ -218,10 +236,17 @@ class DetailPage extends StatelessWidget {
                               'Jln. Kappan Sukses No. 20\nPalembang',
                               style: greyTextStyle,
                             ),
-                            Image.asset(
-                              'assets/btn_maps.png',
-                              width: 40,
-                              height: 40,
+                            InkWell(
+                              onTap: () {
+                                launchUrl(
+                                    'https://goo.gl/maps/nRB2RJs3VGDZbJDx7');
+                                // launchUrl('fdf');
+                              },
+                              child: Image.asset(
+                                'assets/btn_maps.png',
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
                           ],
                         ),
@@ -236,7 +261,9 @@ class DetailPage extends StatelessWidget {
                         height: 50,
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrl('tel:+6282123523997');
+                          },
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(purpleColor),
