@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_find_house/models/space.dart';
 import 'package:flutter_find_house/pages/error_page.dart';
 import 'package:flutter_find_house/theme.dart';
 import 'package:flutter_find_house/widgets/facility.dart';
@@ -8,7 +9,8 @@ import 'package:flutter_find_house/widgets/facility.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  final Space space;
+  const DetailPage(this.space, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +34,8 @@ class DetailPage extends StatelessWidget {
         bottom: false,
         child: Stack(
           children: [
-            Image.asset(
-              'assets/thumbnail.png',
+            Image.network(
+              '${space.imgaeUrl}',
               width: MediaQuery.of(context).size.width,
               height: 350,
               fit: BoxFit.cover,
@@ -70,7 +72,7 @@ class DetailPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Kuretakeso Hott',
+                                  '${space.name}',
                                   style: blackTextStyle.copyWith(
                                     fontSize: 22,
                                   ),
@@ -80,7 +82,7 @@ class DetailPage extends StatelessWidget {
                                 ),
                                 Text.rich(
                                   TextSpan(
-                                      text: '\$52 ',
+                                      text: '\$${space.price} ',
                                       style: purpleTextStyle.copyWith(
                                         fontSize: 16,
                                       ),
@@ -148,17 +150,17 @@ class DetailPage extends StatelessWidget {
                             FacilityItem(
                               imageUrl: 'assets/icon_kitchen.png',
                               name: 'kitchen',
-                              total: 2,
+                              total: space.numberOfKitchens,
                             ),
                             FacilityItem(
                               imageUrl: 'assets/icon_bedroom.png',
                               name: 'bedroom',
-                              total: 3,
+                              total: space.numberOfBedrooms,
                             ),
                             FacilityItem(
                               imageUrl: 'assets/icon_cupboard.png',
                               name: 'Big Lemari',
-                              total: 3,
+                              total: space.numberOfCupboards,
                             ),
                           ],
                         ),
@@ -183,35 +185,22 @@ class DetailPage extends StatelessWidget {
                         height: 88,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
-                          children: [
-                            SizedBox(
-                              width: edge,
-                            ),
-                            Image.asset(
-                              'assets/photo1.png',
-                              width: 110,
-                              height: 88,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            Image.asset(
-                              'assets/photo2.png',
-                              width: 110,
-                              height: 88,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            Image.asset(
-                              'assets/photo3.png',
-                              width: 110,
-                              height: 88,
-                              fit: BoxFit.cover,
-                            ),
-                          ],
+                          children: space.photosDet!.map((itemImage) {
+                            return Container(
+                              margin: EdgeInsets.only(
+                                left: 24,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.network(
+                                  itemImage,
+                                  width: 110,
+                                  height: 88,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
                       SizedBox(

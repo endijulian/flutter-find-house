@@ -15,16 +15,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashPage(),
-    );
-
-    // return ChangeNotifierProvider(
-    //   create: (context) => SpaceProvider(),
-    //   // ignore: prefer_const_constructors
-    //   child: MaterialApp(
-    //     home: const SplashPage(),
-    //   ),
+    // return const MaterialApp(
+    //   home: SplashPage(),
     // );
+
+    return ChangeNotifierProvider(
+      create: (context) => SpaceProvider(),
+      // ignore: prefer_const_constructors
+      child: MaterialApp(
+        home: const SplashPage(),
+      ),
+    );
   }
 }
