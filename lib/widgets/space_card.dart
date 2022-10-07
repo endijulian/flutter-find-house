@@ -29,7 +29,7 @@ class SpaceCard extends StatelessWidget {
               height: 110,
               child: Stack(
                 children: [
-                  Image.asset(space.imgaeUrl),
+                  Image.asset('${space.imgaeUrl}'),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
@@ -68,7 +68,7 @@ class SpaceCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                space.name,
+                '${space.name}',
                 style: blackTextStyle.copyWith(fontSize: 18),
               ),
               const SizedBox(
