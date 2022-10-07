@@ -5,6 +5,7 @@ import 'package:flutter_find_house/models/space.dart';
 import 'package:flutter_find_house/pages/error_page.dart';
 import 'package:flutter_find_house/theme.dart';
 import 'package:flutter_find_house/widgets/facility.dart';
+import 'package:flutter_find_house/widgets/rating_item.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:url_launcher/url_launcher.dart';
 
@@ -97,29 +98,14 @@ class DetailPage extends StatelessWidget {
                               ],
                             ),
                             Row(
-                              children: [
-                                Image.asset(
-                                  'assets/icon_start.png',
-                                  width: 20,
-                                ),
-                                Image.asset(
-                                  'assets/icon_start.png',
-                                  width: 20,
-                                ),
-                                Image.asset(
-                                  'assets/icon_start.png',
-                                  width: 20,
-                                ),
-                                Image.asset(
-                                  'assets/icon_start.png',
-                                  width: 20,
-                                ),
-                                Image.asset(
-                                  'assets/icon_start.png',
-                                  width: 20,
-                                  color: Color(0xff989BA1),
-                                )
-                              ],
+                              children: [1, 2, 3, 4, 5].map((index) {
+                                return Container(
+                                  child: RatingItem(
+                                    index: index,
+                                    rating: space.rating ?? 0,
+                                  ),
+                                );
+                              }).toList(),
                             ),
                           ],
                         ),
