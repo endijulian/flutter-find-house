@@ -222,13 +222,12 @@ class DetailPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Jln. Kappan Sukses No. 20\nPalembang',
+                              '${space.address}\n${space.city}',
                               style: greyTextStyle,
                             ),
                             InkWell(
                               onTap: () {
-                                launchUrl(
-                                    'https://goo.gl/maps/nRB2RJs3VGDZbJDx7');
+                                launchUrl('${space.mapUrl}');
                                 // launchUrl('fdf');
                               },
                               child: Image.asset(
@@ -251,7 +250,7 @@ class DetailPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: ElevatedButton(
                           onPressed: () {
-                            launchUrl('tel:+6282123523997');
+                            launchUrl('tel:${space.phone}');
                           },
                           style: ButtonStyle(
                             backgroundColor:
