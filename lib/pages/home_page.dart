@@ -75,27 +75,63 @@ class HomePage extends StatelessWidget {
                   const SizedBox(
                     width: 24,
                   ),
-                  CityCard(City(
-                      id: 1,
-                      name: 'Jakarta',
-                      imageUrl: 'assets/city1.png',
-                      isPopuler: false)),
+                  CityCard(
+                    City(
+                        id: 1,
+                        name: 'Jakarta',
+                        imageUrl: 'assets/city1.png',
+                        isPopuler: false),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
-                  CityCard(City(
-                      id: 2,
-                      name: 'Bandung',
-                      imageUrl: 'assets/city2.png',
-                      isPopuler: true)),
+                  CityCard(
+                    City(
+                        id: 2,
+                        name: 'Bandung',
+                        imageUrl: 'assets/city2.png',
+                        isPopuler: true),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
-                  CityCard(City(
-                      id: 1,
-                      name: 'Tangerang',
-                      imageUrl: 'assets/city3.png',
-                      isPopuler: false)),
+                  CityCard(
+                    City(
+                        id: 3,
+                        name: 'Tangerang',
+                        imageUrl: 'assets/city3.png',
+                        isPopuler: false),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  CityCard(
+                    City(
+                        id: 4,
+                        name: 'Palembang',
+                        imageUrl: 'assets/city4.png',
+                        isPopuler: false),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  CityCard(
+                    City(
+                        id: 5,
+                        name: 'Aceh',
+                        imageUrl: 'assets/city5.png',
+                        isPopuler: true),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  CityCard(
+                    City(
+                        id: 6,
+                        name: 'Bogor',
+                        imageUrl: 'assets/city6.png',
+                        isPopuler: false),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
