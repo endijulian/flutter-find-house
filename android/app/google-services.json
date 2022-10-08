@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733254967832",
+    "project_id": "flutter-find-house-1931a",
+    "storage_bucket": "flutter-find-house-1931a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733254967832:android:475ec06e07288c229ad96d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_find_house"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733254967832-8vrnkkhimvh3t422a7u8jiumb004npmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzMbMbDlcpywROmnhnK6xTnlfK76TpgiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733254967832-8vrnkkhimvh3t422a7u8jiumb004npmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
